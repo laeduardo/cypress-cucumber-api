@@ -1,5 +1,24 @@
 {
+  "name": "cypress-cucumber-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "cy:open": "cypress open",
+    "test": "cypress run"
+  },
+  "keywords": [],
+  "author": "Eduardo Lopes Amaro",
+  "license": "MIT",
   "devDependencies": {
-    "cypress": "^13.13.0"
+    "cypress": "^13.13.0",
+    "cypress-cucumber-preprocessor": "^4.3.1"
+  },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": true,
+    "stepDefinitions": "cypress/e2e/step_definitions"
+  },
+  "dependencies": {
+    "cypress-plugin-api": "^2.11.1"
   }
 }
