@@ -7,8 +7,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Cypress tests
-        uses: ./
-        with:
-          working-directory: /
-          build: npx cypress info
+      - name: Run Cypress tests
+        run: npx cypress run
+        working-directory: ./cypress
