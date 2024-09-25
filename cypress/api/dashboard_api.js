@@ -4,11 +4,14 @@ const loginPage = new LoginPage
 context('Testar API', () => {
 
     it('GET - UNIT', () => {
-        cy.api({
+        cy.request({
                 method: 'GET',
-                url: '/',
+                url: '/web/index.php/auth/login',
             }).then((response) => {
-                expect(response.status).to.eq(200)
+                expect(response.status).to.eq(304)
             })
         })
+
+
+
     })
