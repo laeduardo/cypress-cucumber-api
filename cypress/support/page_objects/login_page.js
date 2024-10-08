@@ -13,6 +13,14 @@ class LoginPage {
         cy.get(loginElements.password).type(password)
         cy.get(loginElements.btn_login).click()
     }
+
+    verificarLoginValido(){
+        cy.get(loginElements.dashboard).should('be.visible')
+    }
+
+    verificarLoginInvalido(){
+        cy.get(loginElements.invalid_credentials).should('be.visible')
+    }
 }
 
 export default LoginPage;

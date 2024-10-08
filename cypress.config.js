@@ -3,11 +3,11 @@ const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
   api: {
-    baseUrl: "https://opensource-demo.orangehrmlive.com",
+    baseUrl: "https://opensource-demo.orangehrmlive.com/",
     specPattern: ["cypress/api/*.js"]
   },
   e2e: {
-    baseUrl: "https://opensource-demo.orangehrmlive.com",
+    baseUrl: "https://opensource-demo.orangehrmlive.com/",
     env: { 
       hideXhr: true,
       snapshotOnly: true,
@@ -17,6 +17,6 @@ module.exports = defineConfig({
     setupNodeEvents(on, config) {
       on('file:preprocessor', cucumber())
     },
-    specPattern: ["cypress/e2e/step_definitions/*.feature"/*, "cypress/api/*.js"*/]
+    specPattern: ["cypress/e2e/step_definitions/*.feature", "cypress/api/*.js"]
   },
 });
