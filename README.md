@@ -4,7 +4,7 @@
 
 ## Descrição do Projeto
 
-<p align="center">Este projeto tem como objeitvo a construção de testes automatizados para um sistema Web. Vamos utilizar como referência para elaboração dos testes o site [!OrangeHRM](https://opensource-demo.orangehrmlive.com/web/index.php/auth/login), ele é uma plataforma pública onde podemos navegar pelas diferentes funcionalidades e visualizar as requisições feitas durante as ações. 
+<p align="center">Este projeto tem como objeitvo a construção de testes automatizados para um sistema Web. Vamos utilizar como referência para elaboração dos testes o site [OrangeHRM](https://opensource-demo.orangehrmlive.com/web/index.php/auth/login), ele é uma plataforma pública onde podemos navegar pelas diferentes funcionalidades e visualizar as requisições feitas durante as ações. 
 
 Para a implementação dos testes, vamos utilizar a ferramenta Cypress, que é amplamente reconhecida por sua eficácia em automação de testes web, que nos permitirá interagir com elementos da página de forma intuitiva e realizar testes de ponta a ponta. Além disso, o Cypress nos possibilita realizar requisições HTTP diretamente, permitindo que validemos as respostas das nossas APIs e garantemos a integridade dos dados trocados entre o front-end e o back-end.
 
