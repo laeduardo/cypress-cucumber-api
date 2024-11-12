@@ -3,7 +3,7 @@ const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
   e2e: {
-    baseUrl: "https://sso-qa1.clevercorporate.com/account/login",
+    baseUrl: "https://sso-qa1.clevercorporate.com",
     env: { 
       hideXhr: true,
       snapshotOnly: true,

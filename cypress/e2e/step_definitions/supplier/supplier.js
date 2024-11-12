@@ -7,24 +7,18 @@ import SupplierPage from '../../../support/pageobjects/supplierPage';
 const supplierPage = new SupplierPage
 
 beforeEach(() => {
-	loginPage.acessarLogin()
-	const email = Cypress.env('USERNAME')
-	const senha = Cypress.env('PASSWORD')
-	loginPage.fazerLogin(email, senha)
+	cy.login(Cypress.env('USERNAME'), Cypress.env('PASSWORD'))
 })
 
 Given(/^que estou na tela de suppliers$/, () => {
-	cy.get(':nth-child(5) > .text-white').click()
-	cy.get('.nav-item.show > .dropdown-menu > :nth-child(2) > .nav-link > span').click()
-	supplierPage.verificarTelaSuppliers()
-	//return true
+	supplierPage.acessarListagemSuppliers()
 });
 
-When(/^clico no icone de + para criar um novo supplier$/, () => {
+When(/^clico no icone de mais para criar um novo supplier$/, () => {
 	cy.get('.rounded-full').should('be.visible').click()
 	//supplierPage.clicarBotaoFinance();
 	//supplierPage.clicarBotaoSupplier();
-	return true
+	//return true
 });
 
 When(/^preencho o campo todos os campos$/, () => {
