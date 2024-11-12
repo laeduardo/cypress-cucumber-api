@@ -22,6 +22,7 @@ When(/^preencher os campos do formulario$/, () => {
     cy.get('input[placeholder="Name or Supplier ID"]').click().type('42MATTERS AG')
     cy.contains('42MATTERS AG').wait(2000).should('be.visible').click()
     cy.get('button[id="headlessui-listbox-button-:rp:"]').should('be.visible')
+    
 });
 
 Then(/^deve criar o PR$/, () => {
