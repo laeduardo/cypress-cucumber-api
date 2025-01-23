@@ -1,9 +1,10 @@
-const cucumber = require('cypress-cucumber-preprocessor').default;
 const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
+  viewportWidth: 1300,
+  viewportHeight: 800,
   e2e: {
-    baseUrl: "https://sso-qa1.clevercorporate.com",
+    baseUrl: process.env.environment,
     env: { 
       hideXhr: true,
       snapshotOnly: true,
@@ -11,11 +12,13 @@ module.exports = defineConfig({
     },
     experimentalModifyObstructiveThirdPartyCode: true,
     setupNodeEvents(on, config) {
-      on('file:preprocessor', cucumber())
+      return Object.assign({}, config, {
+        reporter: 'spec',
+      })
     },
     specPattern: [
-      "cypress/e2e/step_definitions/*.feature",
-      "cypress/api/*.js"
-    ]
+      "cypress/integration/**/*.spec.js",
+      "cypress/api/**/*.spec.js",
+    ],
   },
-});
+})

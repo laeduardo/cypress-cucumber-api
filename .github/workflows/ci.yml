@@ -1,0 +1,25 @@
+name: Automation Tests
+on: push
+jobs:
+  cypress-run:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20.11.1'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Install Cypress
+        run: npx cypress install
+
+      - name: Run Cypress tests integration Finance 
+        run: npx cypress run --env environment=STAGING,actor=Finance --spec cypress/integration/finance/*.spec.js,cypress/api/finance/*.spec.js
+
+      - name: Run Cypress tests integration Brands & Accounts 
+        run: npx cypress run --env environment=STAGING,actor=Operations --spec cypress/integration/brands_accounts/*.spec.js,cypress/api/brands_accounts/*.spec.js
